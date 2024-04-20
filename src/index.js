@@ -1,26 +1,15 @@
-const express = require('express');
-const app = express();
-const connectBD = require('./database')
+const app = require("../src/app");
+const connectBD = require('./database');
 require('dotenv').config();
+const PORT = process.env.PORT || 8050;
 
-
+app.listen
 
 connectBD();
-const PORT = process.env.PORT ||8050 ;
 
 
 
 
-
-// app.use(express.json());
-
-// app.get('/productos',(req, res)=>{
-//     res.json('H')
-// });
-
-app.listen(PORT, ()=>{
-     console.log(`server levantado en puerto ${PORT}`)
- });
 
 
 
