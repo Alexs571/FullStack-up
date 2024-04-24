@@ -71,38 +71,6 @@ const updateTeddyById = async (req, res) => {
 
 
 
-// const updateTeddyById = async (req, res) => {
-//   try {
-//     const { userId, teddyId } = req.params; // Obtén userId y teddyId de req.params
-//     const updateFields = req.body; // Obtén los campos a actualizar del cuerpo de la solicitud
-
-//     // Verifica que solo se permitan actualizar ciertos campos
-//     const allowedUpdates = ['type', 'color', 'accessories']; // Lista de campos permitidos
-//     const isValidOperation = Object.keys(updateFields).every((field) => allowedUpdates.includes(field));
-
-//     if (!isValidOperation) {
-//       return res.status(400).json({ success: false, message: 'Invalid updates!' });
-//     }
-
-//     // Busca y actualiza el teddy, asegurándote de que esté asociado al usuario específico
-//     const updatedTeddy = await Teddy.findOneAndUpdate(
-//       { _id: teddyId, user: userId },
-//       updateFields,
-//       { new: true }
-//     );
-
-//     if (!updatedTeddy) {
-//       return res.status(404).json({ success: false, message: 'Teddy not found for this user' });
-//     }
-
-//     res.status(200).json({ success: true, data: updatedTeddy });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: error.message });
-//   }
-// };
-
-
-
 // Controlador para eliminar un teddy por su ID
 const deleteTeddyById = async (req, res) => {
   try {

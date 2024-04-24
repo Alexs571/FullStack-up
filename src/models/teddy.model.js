@@ -21,6 +21,10 @@ const teddySchema = new mongoose.Schema({
   accessories: {
     type: String,
     required: true
+  },
+  count: {
+    type: Number,
+    default: 0
   }
 });
 
