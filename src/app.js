@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const teddyRoutes = require('./routes/teddyRoutes');
 const Router = require('./routes/auth.routes');
 const { obtenerModelosPopulares } = require('./libs/consulta');
@@ -11,10 +12,11 @@ const PORT = process.env.PORT || 8050 ;
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 app.use('/api',Router);
 app.use('/api', teddyRoutes);
 
-app.get('/api/modelos-populares', async (req, res) => {
+app.get('/api/populares', async (req, res) => {
     try {
         const resultados = await obtenerModelosPopulares();
         res.json(resultados);

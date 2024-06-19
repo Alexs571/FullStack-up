@@ -20,6 +20,7 @@ const teddySchema = new mongoose.Schema({
   },
   accessories: {
     type: String,
+    enum: ['pelota', 'computadora','guitarra'],
     required: true
   },
   count: {

@@ -31,7 +31,7 @@ const getTeddyById = async (req, res) => {
     if (!teddy) {
       return res.status(404).json({ success: false, message: 'Teddy not found' });
     }
-    res.status(200).json({ success: true, data: teddy });
+    return res.status(200).json({ success: true, data: teddy });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

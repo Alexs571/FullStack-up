@@ -12,6 +12,6 @@ Router.post('/login',authControllers.login)
 
 Router.post('/logout',authControllers.logout)
 
-Router.get('/profile',validateToken.authRequired ,authControllers.profile)
+Router.get('/user/:userId', authControllers.profile);
 
 module.exports = Router;

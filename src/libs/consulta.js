@@ -1,4 +1,4 @@
-// libs/consulta.js
+// pedir el ranking 
 const TuModelo = require('../models/teddy.model');
 async function obtenerModelosPopulares() {
     try {
